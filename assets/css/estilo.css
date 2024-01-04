@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #628B48;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+}
+header > h1{
+    text-align: center;
+    margin: 0;
+    font-family: Verdana;
+    color: antiquewhite;
+    
+}
+.teste{
+    width: 100vw;
+    margin: 0;
+    display: flex;
+}
+.laterais{
+    background-color: lightgray;
+    width: 15vw;
+    height: 200vh;
+    position: relative;
+    top: 10vh;
+    
+}
+.laterais.esquerdo{
+    background-image: url("../imagens/sonhador.jpg");
+    background-size: contain;
+}
+.laterais.direito{
+    background-image: url("../imagens/sonhador.jpg");
+    background-size: contain;
+}
+.meio{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightcyan;
+    position: relative;
+    top: 10vh;
+    
+    
+}
+.perguntas{
+    background-color: lightcyan;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-family: Georgia;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+.perguntas > h1{
+    font-family: Georgia;
+    font-weight: 100;
+    font-size: 40px;
+    background-color: rgb(89, 93, 93);
+    width: 70vw;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.perguntas > label{
+    margin-top: 10px;
+    width: 70vw;
+    text-align: center;
+}
+.perguntas > label:hover{
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.botao{
+    margin-top: 50px ;
+    
+}
+#btn{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+}
+#btn:hover{
+   background-color: darkolivegreen;
+}
+input[type='radio']{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+  /* Quando o botão de rádio é selecionado, muda a cor do label associado */
+input[type='radio']:checked + .labe{
+    color: red; /* Cor quando selecionado */
+    
+  }
+  hr{
+    border: solid 5px rgb(89, 93, 93);; 
+    width: 100%;
+}

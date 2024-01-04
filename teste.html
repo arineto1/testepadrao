@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+    <title>Teste</title>
+</head>
+<body>
+    <header>
+        <h1>SONHADOR OU REALISTA?</h1>
+    </header>
+    <div class="teste">
+        <div class="laterais esquerdo">
+            
+        </div>
+        <div class="meio">
+            <div class="perguntas">
+                <h1>Você prefere ler um livro de fantasia ou de não-ficção?</h1>
+                <input type="radio" name="pergunta1" id="radio1" value="sonhador" class="pergunta"><label class="labe" for="radio1">Fantasia <br></label>
+               <input type="radio" name="pergunta1" id="radio2" value="realista" class="pergunta"><label class="labe" for="radio2">  Não-ficção <br></label>
+                
+            </div>
+            <div class="perguntas">
+                <h1>Você costuma fazer planos a longo prazo ou a curto prazo?</h1>
+               <input type="radio" name="pergunta2" id="radio3" value="sonhador" class="pergunta"><label class="labe" for="radio3">Longo prazo <br></label>
+               <input type="radio" name="pergunta2" id="radio4" value="realista" class="pergunta"><label class="labe" for="radio4">  Curto prazo <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você se inspira mais em pessoas famosas ou em pessoas próximas? </h1>
+               <input type="radio" name="pergunta3" id="radio5" value="sonhador" class="pergunta"><label class="labe" for="radio5">Famosos <br></label>
+               <input type="radio" name="pergunta3" id="radio6" value="realista" class="pergunta"><label class="labe" for="radio6">  Pessoas próximas <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você se considera mais idealista ou pragmático?  </h1>
+               <input type="radio" name="pergunta4" id="radio7" value="sonhador" class="pergunta"><label class="labe" for="radio7">Idealista <br></label>
+               <input type="radio" name="pergunta4" id="radio8" value="realista" class="pergunta"><label class="labe" for="radio8">  Pragmático <br></label>
+            </div>
+            <div class="perguntas">
+                <h1>Você prefere assistir a um filme de animação ou de documentário? </h1>
+               <input type="radio" name="pergunta5" id="radio9" value="sonhador" class="pergunta"><label class="labe" for="radio9">Animação <br></label>
+                <input type="radio" name="pergunta5" id="radio10" value="realista" class="pergunta"><label class="labe" for="radio10"> Documentário <br></label>
+                
+            </div>
+            <hr>
+            <div class="botao">
+                <input type="button" id="btn" value="RESULTADO" > 
+            </div>
+
+                                 
+        </div>
+        <div class="laterais direito">
+            
+        </div>
+
+    </div>
+
+    <script>
+        //iniciando a função ao clicar no botão Enviar
+        document.getElementById("btn").onclick = function() {
+        var contSonhador=0;
+        var contRealista=0;
+        
+
+        //obtendo todos os radios e atribuindo a variável radios
+        var radios = document.getElementsByClassName("pergunta");
+        //percorrendo todas as posições da variável radios
+        for(var i=0; i<radios.length; i++){
+            //testando os radios para ver se está selecionado
+            if(radios[i].checked) {
+                //testando qual o valor dos radios selecionados
+                //contando os radios selecionados de cada animal
+                if(radios[i].value === "sonhador"){
+                    contSonhador++;
+                } else if(radios[i].value === "realista"){
+                    contRealista++;
+                } }
+            }
+           
+               
+        //salvando as porcentagens em um "banco" provisório para recuperar em outra página
+        //localStorage que permite que você salve na sessão do navegador algumas informações
+        // e com isso você pode acessar na outra página.
+        localStorage.setItem('porcSonhador', `Sonhador = ${contSonhador*20} %`);    
+        localStorage.setItem('porcRealista', `Realista = ${contRealista*20} %`);   
+
+        //mandando para página de resultado
+        
+        if(contRealista+contSonhador<5){
+            alert('POR FAVOR, RESPONDA AS 5 PERGUNTAS');
+        }else{
+            if(contRealista > contSonhador){
+            window.open("realista.html")
+            } else{
+            window.open("sonhador.html")
+            }
+        }
+       
+           
+      };
+    
+    </script>
+   
+    
+
+
+</body>
+</html>
